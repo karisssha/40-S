@@ -24,7 +24,7 @@
     font-family: 'ubuntu', monospace;
     height: 100vh;
     width: 100vw;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   
   
@@ -42,7 +42,6 @@
     gap: 20px;
     box-sizing: border-box; /* ensure borders included */
     overflow: hidden;
-    margin: -9.8vw;  
   }
   
   .card-content {
