@@ -1,35 +1,68 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import styles from "./Button.module.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Button.module.css';
 
-function Button({ text, icon, alt, to, type = "button", className = "" }) {
-  const navigate = useNavigate();
+// Icon images
+import EyeClosed from '../../assets/icons/eye-closed.svg?react';
+import EyeOpen from '../../assets/icons/eye-open.svg?react';
 
-  const handleClick = () => {
-    if (to) {
-      navigate(to);
-    }
+import BookClosed from '../../assets/icons/book-closed.svg?react';
+import BookOpen from '../../assets/icons/book-open.svg?react';
+
+import LetterClosed from '../../assets/icons/letter-closed.svg?react';
+import LetterOpen from '../../assets/icons/letter-open.svg?react';
+
+function Button({ onLoadHtml }) {
+  const buttonIcon = [
+    { 
+      href: '/eye.html', 
+      title: 'About', 
+      className: 'eye',
+      Icon: EyeClosed,
+    },
+    
+    { 
+      href: '/book.html', 
+      title: 'Methodology', 
+      className: 'book',
+      Icon: BookClosed,
+    },
+    
+    { 
+      href: '/letter.html', 
+      title: 'Contact', 
+      className: 'letter',
+      Icon: LetterClosed,
+    },
+  ];
+
+  const handleClick = (href, e) => {
+    e.preventDefault();
+    if (onLoadHtml) onLoadHtml(href);
   };
 
   return (
-    <button
-      type={type}
-      className={`${styles.button} ${className}`}
-      onClick={handleClick}
-    >
-      {icon && (
-        <img
-          src={icon}
-          alt={alt || text || "icon"}
-          className={styles.icon}
-        />
-      )}
-      {text && <span>{text}</span>}
-    </button>
+    <div>
+      {buttonIcon.map(({ type, href, title, className, Icon }) => (
+        <a
+          key={href}
+          type={type}
+          href={href}
+          title={title}
+          className={`${styles['menu-icon']} ${styles[className]}`}
+          onClick={(e) => handleClick(href, e)}
+        >
+        
+        <Icon className={styles['icon-image']} />
+
+        </a>
+      ))}
+    </div>
   );
 }
 
 Button.propTypes = {
+  onLoadHtml: PropTypes.func,
   text: PropTypes.string,
   icon: PropTypes.string,
   alt: PropTypes.string,

@@ -1,0 +1,45 @@
+.menu-icon {
+  color: black;
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  pointer-events: auto;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+  color: #f08c00;
+}
+
+.icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  fill: currentColor;
+}
+
+.eye { 
+  top: 20px; 
+  left: 20px; 
+}
+
+.book { 
+  top: 30px; 
+  right: 20px; 
+}
+
+.letter { 
+  bottom: 20px;
+  left: 50%; 
+  right: 50%; 
+}
+
+@media screen and (max-width: 799px) {
+  .letter { 
+    left: 40%; 
+    right: 40%; 
+  }
+  
+}

@@ -26,7 +26,15 @@
     width: 100vw;
     /* overflow-x: hidden; */
   }
-  
+
+  .body-text {
+    font-size: 1.5rem;
+  }
+
+  .text-container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
   
   .card {
     position: relative;
@@ -48,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     flex: 1;
   }
   
@@ -94,32 +102,15 @@
     pointer-events: none;
   }
   
-  .menu-icon {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    pointer-events: auto;
-    transition: transform 0.2s;
-    cursor: pointer;
-  }
-  
-  .menu-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  .menu-icon svg {
-    width: 100%;
-    height: 100%;
-    fill: #000;
-  }
-  
-  .eye { top: 20px; left: 20px; }
-  .book { top: 20px; right: 20px; }
-  .pencil { bottom: 20px; left: 20px; }
-  .mail { bottom: 20px; right: 20px; }
   
 
-@media screen and (max-width: 843px)  {
+  
+
+@media screen and (max-width: 799px)  {
+  .body-text {
+    font-size: 1.1rem;
+  }
+
   .card-content {
     margin-left: 5%;
   }
