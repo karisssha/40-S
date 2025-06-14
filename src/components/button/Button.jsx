@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
+import {Link} from 'react-router-dom'
 
 // Icon images
 import EyeClosed from '../../assets/icons/eye-closed.svg?react';
@@ -15,7 +16,7 @@ import LetterOpen from '../../assets/icons/letter-open.svg?react';
 function Button({ onLoadHtml }) {
   const buttonIcon = [
     { 
-      href: '/eye.html', 
+      href: '/about', 
       title: 'About', 
       className: 'eye',
       Icon: EyeClosed,
@@ -34,6 +35,7 @@ function Button({ onLoadHtml }) {
       className: 'letter',
       Icon: LetterClosed,
     },
+    
   ];
 
   const handleClick = (href, e) => {
@@ -43,20 +45,29 @@ function Button({ onLoadHtml }) {
 
   return (
     <div>
-      {buttonIcon.map(({ type, href, title, className, Icon }) => (
-        <a
-          key={href}
-          type={type}
-          href={href}
-          title={title}
-          className={`${styles['menu-icon']} ${styles[className]}`}
-          onClick={(e) => handleClick(href, e)}
-        >
-        
+   {buttonIcon.map(({ href, title, className, Icon }) => (
+  href.startsWith('/')
+    ? (
+      <Link
+        key={href}
+        to={href}
+        title={title}
+        className={`${styles['menu-icon']} ${styles[className]}`}
+      >
         <Icon className={styles['icon-image']} />
-
-        </a>
-      ))}
+      </Link>
+    ) : (
+      <a
+        key={href}
+        href={href}
+        title={title}
+        className={`${styles['menu-icon']} ${styles[className]}`}
+        onClick={(e) => handleClick(href, e)}
+      >
+        <Icon className={styles['icon-image']} />
+      </a>
+    )
+))}
     </div>
   );
 }
