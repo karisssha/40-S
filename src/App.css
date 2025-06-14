@@ -2,7 +2,7 @@
         @font-face {
           font-family: 'ubuntu';
           src: url('https://40-s.github.io/40-S/assets/fonts/ubuntu-sans-mono.woff2') format('woff2'),
-              url('https://40-s.github.io/40-S/assets/fonts/ubuntu-sans-mono.woff') format('woff');
+               url('https://40-s.github.io/40-S/assets/fonts/ubuntu-sans-mono.woff') format('woff');
           font-weight: normal;
           font-style: normal;
 
@@ -12,3 +12,5 @@
           text-rendering: optimizeLegibility;
       }
 
+     
+   
