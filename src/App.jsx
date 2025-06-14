@@ -2,7 +2,7 @@ import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import ProfileCard from './components/ProfileCard';
+import Router from '../src/application/Router';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
   return (
     
     <>
-      <ProfileCard />
+      <Router />
       
     </>
   )
