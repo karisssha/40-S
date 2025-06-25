@@ -23,7 +23,7 @@ function Button({ onLoadHtml }) {
     },
     
     { 
-      href: '/book.html', 
+      href: '/methodology', 
       title: 'Methodology', 
       className: 'book',
       Icon: BookClosed,
