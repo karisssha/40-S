@@ -1,6 +1,7 @@
 import AboutCard from "../../components/aboutCard/AboutCard"
 import Button from "../../components/button/Button"
-import './About.css'
+// import '../../components/ProfileCard.css'
+// import './About.css'
 
 function About(){
     return(

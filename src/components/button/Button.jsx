@@ -13,6 +13,8 @@ import BookOpen from '../../assets/icons/book-open.svg?react';
 import LetterClosed from '../../assets/icons/letter-closed.svg?react';
 import LetterOpen from '../../assets/icons/letter-open.svg?react';
 
+import ShapeClosed from '../../assets/shapes/shape.svg?react';
+
 function Button({ onLoadHtml }) {
   const buttonIcon = [
     { 
@@ -21,7 +23,7 @@ function Button({ onLoadHtml }) {
       className: 'eye',
       Icon: EyeClosed,
     },
-    
+  
     { 
       href: '/methodology', 
       title: 'Methodology', 
@@ -29,6 +31,14 @@ function Button({ onLoadHtml }) {
       Icon: BookClosed,
     },
     
+    { 
+      href: '/', 
+      title: 'Home', 
+      className: 'shape',
+      Icon: ShapeClosed,
+    },
+    
+
     { 
       href: '/contact', 
       title: 'Contact', 

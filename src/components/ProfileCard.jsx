@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './ProfileCard.css';
+// import './ProfileCard.css';
+import '../App.css';
 import Headshot from '/src/assets/images/gebhard.png';
 import Button from './button/Button';
 
@@ -36,11 +37,14 @@ export default function ProfileCard() {
         ) : (
           <>
             <div className="info">
-              <div className="name">Gebhard Löhnert</div>
-              <div className="title">
-                Psychosozialer Berater<br />
-                <sub>in Ausbildung unter Supervision</sub>
-              </div>
+              <h1>DI Gebhard Löhnert</h1>
+                <div className="medium-text">
+                  <p>Psychosoziale Beratung</p>
+                  <p>Lebensund Sozialberatung</p>
+                  <p>Coaching</p>
+                </div>
+
+
             </div>
             <div className="headshot">
               <img src={Headshot} alt="Gebhard Löhnert" />

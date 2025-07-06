@@ -1,10 +1,10 @@
-import './AboutCard.css'
+import '../../App.css';
 
 function AboutCard(){
     return(
       
         <>
-        <div className="text-container">
+        <div className="text-container body-text">
             <h1>Über mich</h1>
             <p>
                 Ich bin Psychosozialer Berater und arbeite in Österreich.

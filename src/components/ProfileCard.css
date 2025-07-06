@@ -74,9 +74,10 @@
     color: #331c0c;
   }
   
-  .title {
-    font-size: 2rem;
-    color: #6a5f5f;
+  .medium-text {
+    font-size: 1.8rem;
+    font-weight: 550;
+    color: #151313;
     line-height: 1.6;
     margin-top: 10px;
   }
@@ -102,9 +103,6 @@
     pointer-events: none;
   }
   
-  
-
-  
 
 @media screen and (max-width: 799px)  {
   .body-text {
@@ -116,12 +114,20 @@
   }
 
   .headshot {
-    margin-right: 3%;
+    margin-right: 5%;
   }
+
+  .info {
+    position: relative;
+    left: 5%;
+  }
+
   .name {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
-  .title {
-    font-size: 1rem;
+
+  .medium-text {
+    font-size: 1.1rem;
+    line-height: 1.45rem;
   }
 }

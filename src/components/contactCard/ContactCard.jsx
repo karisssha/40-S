@@ -4,7 +4,7 @@ import  "./ContactCard.css"
 function contactCard() {
   return (
     <div className="text-container">
-      <div className="title">Kontakt aufnehmen</div>
+      <h1>Kontakt aufnehmen</h1>
       <div className="body-text">
         <p>
           Wenn Sie Kontakt aufnehmen möchten, senden Sie mir bitte hier eine Nachricht:

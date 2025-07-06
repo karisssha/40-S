@@ -21,25 +21,43 @@
 }
 
 .eye { 
-  top: 20px; 
-  left: 20px; 
+  top: -5px; 
+  left: 10px; 
 }
 
 .book { 
-  top: 30px; 
-  right: 20px; 
+  top: 15px; 
+  right: 15px; 
+}
+
+.shape {
+  bottom: 20px;
+  left: -20px;
+  width: 125px;
+  height: 100px;
 }
 
 .letter { 
-  bottom: 20px;
-  left: 50%; 
-  right: 50%; 
+  bottom: 20px; 
+  right: 20px; 
 }
 
+
 @media screen and (max-width: 799px) {
-  .letter { 
-    left: 40%; 
-    right: 40%; 
+  .eye {
+    top: 5px;
   }
-  
+
+  .letter { 
+    right: 20px; 
+  }
+
+  .shape {
+    left: 8px;
+  }
+
+  .menu-icon {
+    width: 10vw;
+    height: 10vw;
+  }
 }
