@@ -30,7 +30,7 @@ function Button({ onLoadHtml }) {
     },
     
     { 
-      href: '/letter.html', 
+      href: '/contact', 
       title: 'Contact', 
       className: 'letter',
       Icon: LetterClosed,
