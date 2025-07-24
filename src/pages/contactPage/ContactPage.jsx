@@ -5,10 +5,10 @@ import Button from "../../components/button/Button";
 function ContactPage(){
 
     return (
-        <>
+        <main>
         <Button/>
         <ContactCard/>
-        </>
+        </main>
 
 
     );

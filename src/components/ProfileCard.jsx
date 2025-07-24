@@ -28,30 +28,28 @@ export default function ProfileCard() {
   }, [pageUrl]);
 
   return (
-    <div className="card">
+    <main className="card">
       <Button onLoadHtml={setPageUrl} />
 
-      <div className="card-content">
+      <section className="card-content">
         {htmlContent ? (
           <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         ) : (
           <>
-            <div className="info">
+            <header className="info">
               <h1>DI Gebhard Löhnert</h1>
-                <div className="medium-text">
-                  <p>Psychosoziale Beratung</p>
-                  <p>Lebensund Sozialberatung</p>
-                  <p>Coaching</p>
-                </div>
-
-
-            </div>
-            <div className="headshot">
-              <img src={Headshot} alt="Gebhard Löhnert" />
-            </div>
+              <div className="medium-text">
+                <p>Psychosoziale Beratung</p>
+                <p>Lebens- und Sozialberatung</p>
+                <p>Coaching</p>
+              </div>
+            </header>
+            <aside className="headshot">
+              <img src={Headshot} alt="Portrait of Gebhard Löhnert, professional counselor and coach" />
+            </aside>
           </>
         )}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -6,6 +6,8 @@
 
 .contact-list li {
   margin-bottom: 0.5em;
+  text-decoration: none; 
+
 }
 
 .contact-list li a {
@@ -13,6 +15,10 @@
   color: #f08c00; 
 }
 
-.contact-list li {
-  text-decoration: none; 
+.contact-list li a:hover {
+  font-style: oblique;
+}
+
+address {
+  font-style: normal;
 }

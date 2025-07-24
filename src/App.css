@@ -33,10 +33,28 @@
      font-size: 1.15rem;
    }
  
+   /* Screen reader only text */
+   .sr-only {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     padding: 0;
+     margin: -1px;
+     overflow: hidden;
+     clip: rect(0, 0, 0, 0);
+     white-space: nowrap;
+     border: 0;
+   }
+ 
    .text-container {
      width: 70vw;
      margin-left: 15vw;
      margin-top: 15vh;
+   }
+
+   .text-container ul {
+    list-style-position: outside;
+    padding-left: 1.1em;
    }
 
    .card {
@@ -115,32 +133,58 @@
    }
  
    .card-content {
-     margin-left: 5%;
+     flex-direction: column;
+     text-align: left;
+     padding: 0 20px;
+     gap: 30px;
+     margin-left: 0;
    }
  
    
   h1 {
     font-size: 1.5rem;
+    text-align: center;
   }
    
    .headshot {
-     margin-right: 5%;
+     margin: 0 auto;
+     order: -1;
    }
  
    .info {
-     position: relative;
-     left: 5%;
+     text-align: left;
+     align-items: center;
+     position: static;
+     left: auto;
    }
 
    .medium-text {
      font-size: 1.1rem;
      line-height: 1.45rem;
+     text-align: left;
    }
 
    .text-container {
-      width: 65vw;
-      max-height: 200px;      
-      margin-left: 16.5%;
-      margin-top: 15%;
- }
+      width: 85vw;
+      margin-left: 7.5vw;
+      margin-top: 10vh;
+      text-align: center;
+      max-height: none;
+   }
+
+   .text-container h1,
+   .text-container h2,
+   .text-container p {
+     text-align: left;
+   }
+
+   .contact-list {
+     text-align: center;
+   }
+
+   .text-container ul {
+    list-style-position: inside;
+     text-align: left;
+     padding-left: 0;
+   }
 }

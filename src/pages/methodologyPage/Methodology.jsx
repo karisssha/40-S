@@ -4,10 +4,10 @@ import MethodologyCard from "../../components/methodologyCard/MethodologyCard";
 
 function Methodology(){
     return(
-        <>
+        <main>
         <Button/>
         <MethodologyCard/>
-        </>
+        </main>
     
     );
 }

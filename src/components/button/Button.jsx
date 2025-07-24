@@ -53,8 +53,15 @@ function Button({ onLoadHtml }) {
     if (onLoadHtml) onLoadHtml(href);
   };
 
+  const handleKeyDown = (href, e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (onLoadHtml) onLoadHtml(href);
+    }
+  };
+
   return (
-    <div>
+    <nav aria-label="Main navigation">
    {buttonIcon.map(({ href, title, className, Icon }) => (
   href.startsWith('/')
     ? (
@@ -62,23 +69,27 @@ function Button({ onLoadHtml }) {
         key={href}
         to={href}
         title={title}
+        aria-label={`Navigate to ${title} page`}
         className={`${styles['menu-icon']} ${styles[className]}`}
       >
-        <Icon className={styles['icon-image']} />
+        <Icon className={styles['icon-image']} aria-hidden="true" />
       </Link>
     ) : (
       <a
         key={href}
         href={href}
         title={title}
+        aria-label={`Navigate to ${title} page`}
         className={`${styles['menu-icon']} ${styles[className]}`}
         onClick={(e) => handleClick(href, e)}
+        onKeyDown={(e) => handleKeyDown(href, e)}
+        tabIndex="0"
       >
-        <Icon className={styles['icon-image']} />
+        <Icon className={styles['icon-image']} aria-hidden="true" />
       </a>
     )
 ))}
-    </div>
+    </nav>
   );
 }
 

@@ -5,12 +5,12 @@ import Button from "../../components/button/Button"
 
 function About(){
     return(
-        <>
+        <main>
         <Button/>
 
         <AboutCard/>
         
-        </>
+        </main>
     );
 }
 
