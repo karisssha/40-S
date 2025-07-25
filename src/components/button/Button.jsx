@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.css';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 
 // Icon images
 import EyeClosed from '../../assets/icons/eye-closed.svg?react';
@@ -14,28 +14,34 @@ import LetterClosed from '../../assets/icons/letter-closed.svg?react';
 import LetterOpen from '../../assets/icons/letter-open.svg?react';
 
 import ShapeClosed from '../../assets/shapes/shape.svg?react';
+import ShapeOpen from '../../assets/shapes/shape-open.svg?react';
 
 function Button({ onLoadHtml }) {
+  const location = useLocation();
+  
   const buttonIcon = [
     { 
       href: '/about', 
       title: 'About', 
       className: 'eye',
-      Icon: EyeClosed,
+      IconClosed: EyeClosed,
+      IconOpen: EyeOpen,
     },
   
     { 
       href: '/methodology', 
       title: 'Methodology', 
       className: 'book',
-      Icon: BookClosed,
+      IconClosed: BookClosed,
+      IconOpen: BookOpen,
     },
     
     { 
       href: '/', 
       title: 'Home', 
       className: 'shape',
-      Icon: ShapeClosed,
+      IconClosed: ShapeClosed,
+      IconOpen: ShapeOpen,
     },
     
 
@@ -43,7 +49,8 @@ function Button({ onLoadHtml }) {
       href: '/contact', 
       title: 'Contact', 
       className: 'letter',
-      Icon: LetterClosed,
+      IconClosed: LetterClosed,
+      IconOpen: LetterOpen,
     },
     
   ];
@@ -62,33 +69,36 @@ function Button({ onLoadHtml }) {
 
   return (
     <nav aria-label="Main navigation">
-   {buttonIcon.map(({ href, title, className, Icon }) => (
-  href.startsWith('/')
-    ? (
-      <Link
-        key={href}
-        to={href}
-        title={title}
-        aria-label={`Navigate to ${title} page`}
-        className={`${styles['menu-icon']} ${styles[className]}`}
-      >
-        <Icon className={styles['icon-image']} aria-hidden="true" />
-      </Link>
-    ) : (
-      <a
-        key={href}
-        href={href}
-        title={title}
-        aria-label={`Navigate to ${title} page`}
-        className={`${styles['menu-icon']} ${styles[className]}`}
-        onClick={(e) => handleClick(href, e)}
-        onKeyDown={(e) => handleKeyDown(href, e)}
-        tabIndex="0"
-      >
-        <Icon className={styles['icon-image']} aria-hidden="true" />
-      </a>
-    )
-))}
+   {buttonIcon.map(({ href, title, className, IconClosed, IconOpen }) => {
+     const isActive = location.pathname === href;
+     const CurrentIcon = isActive ? IconOpen : IconClosed;
+     
+     return href.startsWith('/')
+       ? (
+         <Link
+           key={href}
+           to={href}
+           title={title}
+           aria-label={`Navigate to ${title} page`}
+           className={`${styles['menu-icon']} ${styles[className]}`}
+         >
+           <CurrentIcon className={styles['icon-image']} aria-hidden="true" />
+         </Link>
+       ) : (
+         <a
+           key={href}
+           href={href}
+           title={title}
+           aria-label={`Navigate to ${title} page`}
+           className={`${styles['menu-icon']} ${styles[className]}`}
+           onClick={(e) => handleClick(href, e)}
+           onKeyDown={(e) => handleKeyDown(href, e)}
+           tabIndex="0"
+         >
+           <CurrentIcon className={styles['icon-image']} aria-hidden="true" />
+         </a>
+       );
+   })}
     </nav>
   );
 }
